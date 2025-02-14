@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Haroldo ❤️</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Pixel', Arial;
+            color: #8b0000;
+            margin: 0;
+            padding: 20px;
+            image-rendering: pixelated;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            border: 4px solid #ff69b4;
+            padding: 20px;
+            background-color: #fff0f5;
+            box-shadow: 8px 8px 0 #ffb6c1;
+        }
+
+        h1 {
+            color: #ff1493;
+            text-align: center;
+            font-size: 32px;
+            text-shadow: 2px 2px 0 #ffffff;
+        }
+
+        .pixel-heart {
+            width: 32px;
+            height: 32px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAYUExURQAAAP///wAAAAAA//8A//8A//8A//+Z3c7ZAAAAFHRSTlMAECAwQFBgcICPn6+/z9/v/wCjI8kAAABiSURBVDhP1ZJBCsAgDAS9VPFS8P+/2kPBQ2l6EIos7CUhMxshxQ+0nWlwqgM5VwXqR4HcZgC3gQxQxwVgF9wAMQnA5VwAqRkA1QYgJgBQzQCgGgCk+gNINQAAqR4Aqo8Aqg0Aqk8AqlcAqj0Aqj8AqgMAVHcAqg8AqjMAVDMAqg0Aqg0Aqg0AqgHfqgHk2Q8yBAAAAABJRU5ErkJggg==');
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .message-box {
+            border: 3px solid #ff69b4;
+            padding: 15px;
+            margin: 20px 0;
+            background: white;
+            position: relative;
+        }
+
+        .pixel-cloud {
+            width: 100%;
+            height: 80px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAD1BMVEUAAAD/zAD/zAD/zAD/zADQ9rKGAAAAA3RSTlMA5qDNo8KGAAAAUElEQVQoz2MYBSMHgMpg/////yMYwPj/BxgwgJkQDsgC5IC4DAwM/xFqGf4j1DL8R6hl+I9Qy/AfoZbhP0Itw3+EWob/CLUM/xFqGf4j1DL8R6gdGQAAk/oC+WbWrXAAAAAASUVORK5CYII=') repeat-x;
+            animation: clouds 20s linear infinite;
+        }
+
+        @keyframes clouds {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }
+
+        button {
+            background-color: #ff69b4;
+            border: 3px solid #ff1493;
+            padding: 10px 20px;
+            font-family: 'Pixel';
+            color: white;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="pixel-cloud"></div>
+    <div class="container">
+        <h1>❤️ Para Meu Haroldo ❤️</h1>
+        
+        <div style="text-align: center">
+            <div class="pixel-heart" style="margin: 0 auto"></div>
+        </div>
+
+        <div class="message-box">
+            <p>Haroldo,</p>
+            <p>Cada pixel desse site representa um pedacinho do que sinto por você. Você é:</p>
+            <ul>
+                <li>Meu melhor amigo</li>
+                <li>Meu porto seguro</li>
+                <li>Minha inspiração</li>
+            </ul>
+            <p>Te amo mais que todos os bits do universo! ❤️</p>
+        </div>
+
+        <div style="text-align: center">
+            <button onclick="showSecretMessage()">Clique aqui!</button>
+        </div>
+
+        <div id="secret" style="display: none; text-align: center">
+            <p>Você é o amor da minha vida!</p>
+            <div style="font-size: 24px">🎮 ❤️ 🎮</div>
+        </div>
+    </div>
+
+    <script>
+        function showSecretMessage() {
+            document.getElementById('secret').style.display = 'block';
+            const hearts = ['❤️', '💖', '💕', '💞'];
+            for(let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.style.position = 'absolute';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animation = `float ${3 + Math.random() * 3}s linear`;
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                document.body.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 3000);
+            }
+        }
+    </script>
+</body>
+</html>
